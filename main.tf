@@ -8,10 +8,9 @@ resource aws_instance web {
 }
 
 terraform {
-    backend "s3" {
-        bucket = "kaizen-shirina"
-        key = "terraform.tfstate"
-        region = "us-east-1"
-    }
-    
+  backend "s3" {
+    bucket = "kaizen-shirina"
+    key    = "terraform.tfstate"
+    region = "us-east-2"
+  }
 }
