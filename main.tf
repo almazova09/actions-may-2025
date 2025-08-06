@@ -3,7 +3,7 @@ provider aws {
 }
 
 resource aws_instance web {
-    ami           = "ami-08ca1d1e465fbfe0c"
+    ami           = "ami-08221e706f343d7b7"
     instance_type = "t2.micro"
 }
 
