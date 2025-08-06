@@ -33,8 +33,10 @@ jobs:
       run: terraform init
 
     - name: Apply or Destroy
-      run: 
-        if [[ "${{ inputs.action }}"" == "apply" ]]
+     
+    - name: Apply or Destroy
+      run: |
+        if [[ "${{ inputs.action }}" == "apply" ]]
         then
           terraform apply -auto-approve
         else
