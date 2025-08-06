@@ -1,4 +1,4 @@
-read -p "Select your choics" action
+read -p "Select your choice" action
 
 if [[ $action == "apply" ]]; then
     terraform apply -auto-approve
