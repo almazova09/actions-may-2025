@@ -6,21 +6,21 @@ on:
         description: "Select your choice"
         required: true
         type: choice
-        options: 
+        options:
         - apply
         - destroy
 
-      region: 
+      region:
         description: "Provide region"
         required: true
         type: choice
         options:
         - us-east-1
         - us-east-2
-
+        
       ami_id:
         description: "Provide AMI ID"
-        required: true 
+        required: true
 
       instance_type:
         description: "Provide Instance Type"
@@ -39,7 +39,7 @@ jobs:
         ami_id = "${{ inputs.ami_id }}"
         instance_type = "${{ inputs.instance_type }}"
         region = "${{ inputs.region }}"
-        EOF
+        EOF        
 
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v3
@@ -56,8 +56,6 @@ jobs:
     - name: Init
       run: terraform init
 
-    - name: Apply or Destroy
-     
     - name: Apply or Destroy
       run: |
         if [[ "${{ inputs.action }}" == "apply" ]]
